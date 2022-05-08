@@ -1,0 +1,91 @@
+﻿@model List<reviewProject.ViewModels.QuestionReviewViewModel>;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    td#rangeContainer {
+        display: flex;
+        justify-content: space-evenly;
+    }
+</style>
+
+<h1>التقييم</h1>
+
+
+
+
+
+
+@foreach (var item in Model)
+{
+    <div>@item.Questions</div>
+    for (var i = 0; i < 5; i++)
+    {
+        <input type="radio" name="@item.QuesId" value="@(i+1)" />
+        <label>@(i+1)</label>
+    }
+
+}
+
+
+
+<script>
+
+    @foreach (var item in Model)
+    {
+        @:
+        @:console.log(document.querySelector('input[name="@item.QuesId"]:checked').value);
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+
+@* <form asp-action="Index" >
+    <tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.Questions)
+    </td>
+
+    <td id="rangeContainer">
+    <div>
+    <input asp-for="Range" type="radio" id="1" name="Range" value="1">
+    <label ">1</label>
+    </div>
+    <br>
+    <div>
+    <input type="radio" id="2" name="Range" value="2">
+    <label asp-for="Range">2</label>
+    </div>
+    <br>
+    <div>
+    <input type="radio" id="3" name="Range" value="3">
+    <label asp-for="Range">3</label>
+    </div>
+    <br>
+    <div>
+    <input type="radio" id="4" name="Range" value="4">
+    <label asp-for="Range">4</label>
+    </div>
+    <br>
+    <div>
+    <input type="radio" id="5" name="Range" value="5">
+    <label asp-for="Range">5</label>
+    </div>
+    <br><br>
+    <input type="submit" value="تـــم">
+    </td>
+    </tr>
+    </form>*@
+</tbody>
+
+</table>
