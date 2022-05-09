@@ -23,24 +23,44 @@
     <div>@item.Questions</div>
     for (var i = 0; i < 5; i++)
     {
-        <input type="radio" name="@item.QuesId" value="@(i+1)" />
+        <input type="radio" class="allRadioBtns" name="radioOfQuesID-@(item.QuesId)" value="@(i+1)" />
         <label>@(i+1)</label>
     }
-
 }
-
+<br>
+<button id="btnSubmit" class="btn btn-primary">تـــم</button>
 
 
 <script>
+    let result = new Array();
+    
 
-    @foreach (var item in Model)
-    {
-        @:
-        @:console.log(document.querySelector('input[name="@item.QuesId"]:checked').value);
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            $(".allRadioBtns").each(function () {
+                if ($(this).prop("checked")) {
+                    let item = {};
+                    console.log("item.QuesId:[", ($(this).attr('name')).split("-")[1], "] \nvalue:[", $(this).val(), "]");
+                    item.quisId = ($(this).attr('name')).split("-")[1];
+                    item.range = $(this).val(); 
+                    result.push(item);
+                    
+                }
+                
 
-    }
-
-
+            })
+            console.log(JSON.stringify(result));
+            $.ajax({
+                contentType: "application/JSON; charset=utf-8",
+                dataType: 'json',
+                type: 'POST',
+                url: '/Review/Index',
+                data: JSON.stringify(result),
+                success: function () { console.log("Worked") },
+                error: function () { console.log("failed") }
+            })
+        })
+    })
 
 
 

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 
 namespace reviewProject.ViewModels
 {
-    public class QuestionReviewViewModel
+    public class ReviewViewModel
     {
-      
-        public string Range { get; set; }
-        public string QuesId { get; set; }
 
-        public string Questions { get; set; }
+        public string Range { get; set; }
+        public int QuesId { get; set; }
+
 
     }
 }

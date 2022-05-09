@@ -6,6 +6,8 @@ namespace reviewProject.Models
 {
     public class Review
     {
+        
+
         [Key]
         public int Id { get; set; }
 
@@ -13,7 +15,8 @@ namespace reviewProject.Models
         public string RangeResult { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
+        public DateTime Date { get{return date ?? DateTime.Now;} set{this.date = value;} }
+        private DateTime? date = null;
 
         public virtual Question QuestionModel { get; set; }
         [ForeignKey(nameof(QuestionModel))]

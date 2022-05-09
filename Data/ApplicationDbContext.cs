@@ -9,8 +9,8 @@ namespace reviewProject.Data
         {
         }
 
-        public DbSet<Question> Questions { get; set; }
-        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Question> Question { get; set; }
+        public DbSet<Review> Review { get; set; }
         
     }
 }

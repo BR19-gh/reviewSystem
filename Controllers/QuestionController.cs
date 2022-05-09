@@ -16,7 +16,7 @@ namespace reviewProject.Controllers
         // GET: QuestionController
         public ActionResult Index()
         {
-            var Questions = _db.Questions.ToList();
+            var Questions = _db.Question.ToList();
 
             return View(Questions);
         }
@@ -33,7 +33,7 @@ namespace reviewProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Question Model)
         {
-            _db.Questions.Add(Model);
+            _db.Question.Add(Model);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -49,7 +49,7 @@ namespace reviewProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, Question entity)
         { 
-            _db.Questions.Update(entity);
+            _db.Question.Update(entity);
             _db.SaveChanges();
 
             return RedirectToAction("Index");
@@ -66,8 +66,8 @@ namespace reviewProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
-            var Model = _db.Questions.SingleOrDefault(x => x.Id == id);
-            _db.Questions.Remove(Model);
+            var Model = _db.Question.SingleOrDefault(x => x.Id == id);
+            _db.Question.Remove(Model);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

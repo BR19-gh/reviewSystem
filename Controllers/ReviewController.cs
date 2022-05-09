@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using reviewProject.Data;
+using reviewProject.Models;
 using System.Linq;
 using reviewProject.ViewModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System;
 
 namespace reviewProject.Controllers
 {
@@ -17,7 +20,7 @@ namespace reviewProject.Controllers
         public ActionResult Index()
         {
 
-            var questions = _db.Questions.ToList();
+            var questions = _db.Question.ToList();
             var model = new List<QuestionReviewViewModel>();
 
             foreach (var question in questions)
@@ -32,10 +35,29 @@ namespace reviewProject.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Index(QuestionReviewViewModel entity)
+        private string Parse(int id)
         {
-            return View();
+            throw new NotImplementedException();
         }
+
+        [HttpPost]
+        public IActionResult Index([FromBody] List<ReviewViewModel> result)
+        {
+            int i = 0;
+            
+            foreach (var item in result)
+            {
+                var obj = new Review();
+                obj.QuesId = result[i].QuesId;
+                obj.RangeResult = result[i].Range;
+                _db.Review.Add(obj);
+                _db.SaveChanges();
+                i++;
+            }
+
+            return RedirectToAction("Index");
+        }
+
+      
     }
 }

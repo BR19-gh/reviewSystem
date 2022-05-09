@@ -10,8 +10,8 @@ using reviewProject.Data;
 namespace reviewProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220507095626_firstMigrate")]
-    partial class firstMigrate
+    [Migration("20220508235252_initalMigrate")]
+    partial class initalMigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,7 @@ namespace reviewProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Questions");
+                    b.ToTable("Question");
                 });
 
             modelBuilder.Entity("reviewProject.Models.Review", b =>
@@ -50,14 +50,14 @@ namespace reviewProject.Migrations
                     b.Property<int>("QuesId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RangeResult")
-                        .HasColumnType("int");
+                    b.Property<string>("RangeResult")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("QuesId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Review");
                 });
 
             modelBuilder.Entity("reviewProject.Models.Review", b =>
