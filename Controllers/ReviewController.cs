@@ -35,27 +35,27 @@ namespace reviewProject.Controllers
             return View(model);
         }
 
-        private string Parse(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         [HttpPost]
-        public IActionResult Index([FromBody] List<ReviewViewModel> result)
+        public IActionResult Index([FromBody] List<PostReviewViewModel> result)
         {
             int i = 0;
             
             foreach (var item in result)
             {
                 var obj = new Review();
-                obj.QuesId = result[i].QuesId;
-                obj.RangeResult = result[i].Range;
+                obj.QuesId = int.Parse(result[i].QuesId);
+                obj.RangeResult = int.Parse(result[i].Range);
                 _db.Review.Add(obj);
                 _db.SaveChanges();
                 i++;
             }
 
-            return RedirectToAction("Index");
+            var html = "<h1>Thank You</h1>";
+            return new ContentResult
+            {
+                Content = html,
+                ContentType = "text/html"
+            };
         }
 
       

@@ -7,7 +7,7 @@ namespace reviewProject.ViewModels
     {
       
         public string Range { get; set; }
-        public string QuesId { get; set; }
+        public int QuesId { get; set; }
 
         public string Questions { get; set; }
 

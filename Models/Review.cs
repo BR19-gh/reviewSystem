@@ -12,11 +12,10 @@ namespace reviewProject.Models
         public int Id { get; set; }
 
        
-        public string RangeResult { get; set; }
+        public int RangeResult { get; set; }
 
         [Required]
-        public DateTime Date { get{return date ?? DateTime.Now;} set{this.date = value;} }
-        private DateTime? date = null;
+        public DateTime Date { get; set; } = DateTime.Now;
 
         public virtual Question QuestionModel { get; set; }
         [ForeignKey(nameof(QuestionModel))]

@@ -41,7 +41,7 @@
                 if ($(this).prop("checked")) {
                     let item = {};
                     console.log("item.QuesId:[", ($(this).attr('name')).split("-")[1], "] \nvalue:[", $(this).val(), "]");
-                    item.quisId = ($(this).attr('name')).split("-")[1];
+                    item.quesId = ($(this).attr('name')).split("-")[1];
                     item.range = $(this).val(); 
                     result.push(item);
                     
