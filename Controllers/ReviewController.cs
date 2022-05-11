@@ -50,14 +50,19 @@ namespace reviewProject.Controllers
                 i++;
             }
 
-            var html = "<h1>Thank You</h1>";
-            return new ContentResult
-            {
-                Content = html,
-                ContentType = "text/html"
-            };
+            return RedirectToAction("ThankYouPage");
         }
 
-      
+        public ActionResult ThankYouPage()
+        {
+
+
+
+            return View();
+        }
+
+
     }
+
+ 
 }

@@ -148,4 +148,4 @@ C:\Users\ibrah\source\repos\reviewProject\reviewProject\obj\Debug\net5.0\Razor\V
 C:\Users\ibrah\source\repos\reviewProject\reviewProject\obj\Debug\net5.0\Razor\Views\Question\Edit.cshtml.g.cs
 C:\Users\ibrah\source\repos\reviewProject\reviewProject\obj\Debug\net5.0\Razor\Views\Question\Delete.cshtml.g.cs
 C:\Users\ibrah\source\repos\reviewProject\reviewProject\obj\Debug\net5.0\Razor\Views\Review\Index.cshtml.g.cs
-C:\Users\ibrah\source\repos\reviewProject\reviewProject\obj\Debug\net5.0\Razor\Views\Review\ThankyouPage.cshtml.g.cs
+C:\Users\ibrah\source\repos\reviewProject\reviewProject\obj\Debug\net5.0\Razor\Views\Review\ThankYouPage.cshtml.g.cs

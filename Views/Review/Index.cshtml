@@ -26,18 +26,32 @@
         <input type="radio" class="allRadioBtns" name="radioOfQuesID-@(item.QuesId)" value="@(i+1)" />
         <label>@(i+1)</label>
     }
+    <span id="ErrValidate@(item.QuesId)"></span>
 }
 <br>
-<button id="btnSubmit" class="btn btn-primary">تـــم</button>
+<a id="btnSubmit" class="btn btn-primary">تـــم</a>
 
 
 <script>
     let result = new Array();
     
-
+let isValid = true;
     $(document).ready(function () {
         $("#btnSubmit").click(function () {
+            
+            @foreach (var item in Model)
+            {
+               @: if($('input[name="radioOfQuesID-@(item.QuesId)"]:checked').length === 0) {
+                @:   isValid = false;
+                @:  document.getElementById('ErrValidate@(item.QuesId)').innerHTML = "<b class='txt-danger'><br>الرجاء الإجابة على هذا السؤال</b>"
+                @: 
+              @: }
+
+            }
+           
+            if(!isValid){ isValid=true; return;}
             $(".allRadioBtns").each(function () {
+                
                 if ($(this).prop("checked")) {
                     let item = {};
                     console.log("item.QuesId:[", ($(this).attr('name')).split("-")[1], "] \nvalue:[", $(this).val(), "]");
@@ -56,9 +70,9 @@
                 type: 'POST',
                 url: '/Review/Index',
                 data: JSON.stringify(result),
-                success: function () { console.log("Worked") },
-                error: function () { console.log("failed") }
-            })
+                
+            });
+             location.assign("/Review/ThankYouPage");
         })
     })
 
