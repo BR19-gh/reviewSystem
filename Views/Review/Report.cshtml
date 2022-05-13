@@ -1,0 +1,50 @@
+﻿@model List<reviewProject.ViewModels.ReportViewModel>
+
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th colspan="7" class="pt-3 pb-3">
+                <h1>التقرير</h1>
+            </th>
+        </tr>
+        <tr>
+            <th>السؤال</th>
+            <th>إجمالي التقييم</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model)
+        {
+            <tr>
+
+                <td>
+                    <h6>@entry.Question</h6>
+
+                </td>
+                <td>
+                    @*icon-star-outlined*@
+                    <h3 style="display: flex; direction: ltr; justify-content: right;">
+                        <script>
+                            console.log(@entry.Average)
+                            for (let i = 0; i < @entry.Average; i++) {//print full star
+                                document.write("<div class='icon-star'></div>")
+                            }
+                            for (let i = 0; i < 5 - @entry.Average; i++) {//print full star
+                                document.write("<div class='icon-star-outlined'></div>")
+                            }
+
+                        </script>
+
+
+
+                    </h3>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

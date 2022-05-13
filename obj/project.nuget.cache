@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TJEJDMWc1mX39SiAagph8nXpU8Nq7+6/TKKmgaI2CUcKi73PNf3uy79PP/fmA11nT3JPImihza4hhkPcbzI7Xw==",
+  "dgSpecHash": "gp2iF+hReQl50rUbl1Dw2HO25WN/z+lEieGyxYMPMfzQQoL8DLokPBh/jxUK1xwlhM73OoUKYAG0IY1ARQ0tIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ibrah\\source\\repos\\reviewProject\\reviewProject\\reviewProject.csproj",
   "expectedPackageFiles": [
@@ -127,7 +127,8 @@
     "C:\\Users\\ibrah\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\ibrah\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ibrah\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\ibrah\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\ibrah\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\ibrah\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }
